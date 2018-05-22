@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>WebDollar Fallback Nodes</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <br />
+    <h1>WebDollar Fallback Nodes</h1>
+    <br />
+    <h2><span class="badge badge-success">Latest Block: <span id="last_block">0</span></span></h2>
+    <hr class="my-4">
+    <center><a href="http://calculator.wd.hostero.eu/" target="_blank">Mining Reward Calculator</a> | <a href="http://hash.wd.hostero.eu/dashboard/db/webdollar-global-hashing-power" target="_blank">Global Hashing Power Chart</a></center>
+    <hr class="my-4">
+    <p>
+      <table id="nodes" class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Node</th>
+            <th>Block</th>
+            <th>Response (ms)</th>
+            <th>Last Response (m)</th>
+            <th>Clients</th>
+            <th>Servers</th>
+            <th>Version</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+      </table>
+
+      <p>
+        <ul>
+          <li><i>Response time is calculated between when the request is sent and the data is received.</i></li>
+          <li><i>Stale nodes haven't updated the block count in the last 10 minutes.</i></li>
+          <li><i>The Last Response is calculated on the client side, from the first time you visit the page.</i></li>
+        </ul>
+      </p>
+  </div>
+
+  <p>
+    <center><small class="form-text text-muted">&copy;2018 <a href="http://hostero.eu">Hostero.eu</a>. Donate: WEBD$gCpn9xPgcSkBNuUAwV7oENGStzhAdc1fRz$</small></center>
+  </p>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/numeral/numeral.js"></script>
+  <script src="bower_components/simple-statistics/index.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    var fallback = {
+      "protocol": "WebDollar",
+      "name": "fallback nodes",
+      "nodes": [
+        //---------------------------------------------------------
+        //--------------Community FallBack Nodes-------------------
+        //---------------------------------------------------------
+
+        //{"addr": ["https://webdollar.bitcoinplusplus.com:443"]},
+        //{"addr": ["https://amsterdam.wdpool.io:443"]},
+        //{"addr": ["https://strasbourg.wdpool.io:443"]},
+        //{"addr": ["https://paris.wdpool.io:443"]},
+        {
+          "addr": ["https://webdollar.csland.ro:8440"]
+        }, // Thanks to @mariotheodor
+        {
+          "addr": ["https://webdollar.csland.ro:8441"]
+        }, // Thanks to @mariotheodor
+        {
+          "addr": ["https://webdollar.csland.ro:8442"]
+        }, // Thanks to @mariotheodor
+        {
+          "addr": ["https://webdollar.csland.ro:8443"]
+        }, // Thanks to @mariotheodor
+        {
+          "addr": ["https://nodecstl.ddns.net:80"]
+        },
+        {
+          "addr": ["https://webd.5q.ro:3333"]
+        },
+        {
+          "addr": ["https://shpool.ml:443"]
+        }, // Thanks to @Amahte
+        {
+          "addr": ["https://webdollar.network:5000"]
+        }, // Thanks to @ader1990
+        {
+          "addr": ["https://titan.serg.at:80/"]
+        }, // Thanks to @SergiuWX
+        {
+          "addr": ["https://titan.serg.at:8080/"]
+        }, // Thanks to @SergiuWX
+        {
+          "addr": ["https://titan.serg.at:8081/"]
+        }, // Thanks to @SergiuWX
+        {
+          "addr": ["https://titan.serg.at:8082/"]
+        }, // Thanks to @SergiuWX
+        {
+          "addr": ["https://node1.petreus.ro:443"]
+        }, // Thanks to Dani Petreus
+        {
+          "addr": ["https://node2.petreus.ro:443"]
+        }, // Thanks to Dani Petreus
+        {
+          "addr": ["https://node3.petreus.ro:443"]
+        }, // Thanks to Dani Petreus
+        {
+          "addr": ["https://pool.webd.club:80/"]
+        }, // Thanks to @ermethic
+
+        {
+          "addr": ["https://nodecstl.ddns.net:81/"]
+        }, // Thanks to @taralungaCostel
+        {
+          "addr": ["https://robitza.ddns.net:80"]
+        }, // Thanks to @robertclaudiu
+        {
+          "addr": ["https://robitza.ddns.net:443"]
+        }, // Thanks to @robertclaudiu
+        {
+          "addr": ["https://robitza.ddns.net:8080"]
+        }, // Thanks to @robertclaudiu
+        {
+          "addr": ["https://robitza.ddns.net:8081"]
+        }, // Thanks to @robertclaudiu
+        {
+          "addr": ["https://robitza.ddns.net:8082"]
+        }, // Thanks to @robertclaudiu
+        {
+          "addr": ["https://wd1.hoste.ro:51261"]
+        }, // Thanks to @morion4000
+        {
+          "addr": ["https://wd1.hoste.ro:53642"]
+        }, // Thanks to @morion4000
+        {
+          "addr": ["https://wd1.hoste.ro:60260"]
+        }, // Thanks to @morion4000
+        {
+          "addr": ["https://wd1.hoste.ro:61099"]
+        }, // Thanks to @morion4000
+        {
+          "addr": ["https://wd2.hoste.ro:55700"]
+        }, // Thanks to @morion4000
+        {
+          "addr": ["https://wd2.hoste.ro:55974"]
+        }, // Thanks to @morion4000
+        {
+          "addr": ["https://wd2.hoste.ro:63980"]
+        }, // Thanks to @morion4000
+        {
+          "addr": ["https://wd2.hoste.ro:65279"]
+        }, // Thanks to @morion4000
+
+        //---------------------------------------------------------
+        //--------------WebDollar FallBack Nodes-------------------
+        //---------------------------------------------------------
+
+        {
+          "addr": ["https://skyhub.me:80"]
+        },
+        {
+          "addr": ["https://presa7.ro:80"]
+        },
+
+        {
+          "addr": ["https://webdollar-vps1.ddns.net:80"]
+        },
+        {
+          "addr": ["https://webdollar-vps2.ddns.net:80"]
+        },
+        {
+          "addr": ["https://webdollar-vps3.ddns.net:80"]
+        },
+
+        {
+          "addr": ["https://hcern.ddns.net:80"]
+        },
+        {
+          "addr": ["https://hcern.ddns.net:443"]
+        },
+        {
+          "addr": ["https://hcern.ddns.net:8080"]
+        },
+        {
+          "addr": ["https://hcern.ddns.net:8081"]
+        },
+      ]
+    };
+    var last_block = 0;
+
+    $(document).ready(function() {
+      table = $('#nodes').DataTable({
+        'pageLength': 100,
+        "order": [
+          [1, 'desc'],
+          [2, 'asc']
+        ]
+      });
+
+      function call_nodes() {
+        table.clear();
+
+        $.each(fallback.nodes, function(index, node) {
+          var url = node.addr[0];
+          var timer = Date.now();
+
+          var callback = (function(timer, url) {
+            return function(data) {
+              var status = '<span class="badge badge-success">good</span>';
+              var storage;
+
+              try {
+                storage = localStorage.getItem(url);
+
+                if (storage === null) {
+                  throw 'is null';
+                }
+
+                storage = JSON.parse(storage);
+              } catch (e) {
+                storage = {
+                  blocks: 0,
+                  time: Date.now(),
+                  lastUpdateTime: Date.now()
+                };
+              }
+
+              storage.lastUpdateTime = storage.lastUpdateTime || Date.now();
+
+              if (data.blocks.length > storage.blocks) {
+                storage.lastUpdateTime = Date.now();
+              }
+
+              if (Date.now() - storage.lastUpdateTime > 10 * 60 * 1000) {
+                status = '<span class="badge badge-warning">stale</span>';
+              }
+
+              localStorage.setItem(url, JSON.stringify({
+                blocks: data.blocks.length,
+                time: Date.now(),
+                lastUpdateTime: storage.lastUpdateTime
+              }));
+
+              table.row.add([
+                '<a href="' + url + '" target="_blank">' + url + '</a>',
+                numeral(data.blocks.length).format('0,0'),
+                Date.now() - timer,
+                parseInt((Date.now() - storage.lastUpdateTime) / 1000 / 60) + ' minute(s) ago',
+                data.sockets.clients,
+                data.sockets.servers,
+                data.version,
+                status
+              ]).draw(false);
+
+              if (data.blocks.length > last_block) {
+                last_block = data.blocks.length;
+              }
+
+              $('#last_block').html(numeral(last_block).format('0,0'));
+            }
+          })(timer, url);
+
+          var error = (function(url) {
+            return function(xhr, status) {
+              var storage;
+
+              try {
+                storage = localStorage.getItem(url);
+
+                if (storage === null) {
+                  throw 'is null';
+                }
+
+                storage = JSON.parse(storage);
+              } catch (e) {
+                storage = {
+                  blocks: 0,
+                  time: Date.now(),
+                  lastUpdateTime: Date.now()
+                };
+              }
+
+              storage.lastUpdateTime = storage.lastUpdateTime || Date.now();
+
+              localStorage.setItem(url, JSON.stringify(storage));
+
+              table.row.add([
+                '<a href="' + url + '" target="_blank">' + url + '</a>',
+                '-',
+                '-',
+                parseInt((Date.now() - storage.lastUpdateTime) / 1000 / 60) + ' minute(s) ago',
+                '-',
+                '-',
+                '-',
+                '<span class="badge badge-danger">' + status + '</span>'
+              ]).draw(false);
+            }
+          })(url);
+
+          $.ajax({
+            dataType: 'json',
+            url: url,
+            success: callback,
+            timeout: 10000
+          }).fail(error);
+        });
+      }
+
+      call_nodes();
+      setInterval(call_nodes, 40 * 1000);
+    });
+  </script>
+</body>
+
+</html>
