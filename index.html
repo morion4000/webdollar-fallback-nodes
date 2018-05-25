@@ -122,6 +122,7 @@
                 last_block = data.blocks.length;
               }
 
+              document.title = last_block + ' - WebDollar Fallback Nodes';
               $('#last_block').html(numeral(last_block).format('0,0'));
             }
           })(timer, url);
