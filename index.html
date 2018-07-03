@@ -176,11 +176,6 @@
       $.getJSON('http://data.webd.hoste.ro/fallbacks.json', function(data) {
         nodes = data;
 
-        // Request from Panait. Explorer
-        nodes.push({
-          "addr": ["http://209.250.248.110:10000"]
-        });
-
         call_nodes();
       });
       setInterval(call_nodes, 40 * 1000);
