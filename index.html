@@ -176,7 +176,7 @@
         });
       }
 
-      $.getJSON('http://hostero.eu/webdollar/fallbacks.json', function(data) {
+      $.getJSON('https://www.hostero.eu/webdollar/fallbacks.json', function(data) {
         nodes = data;
 
         call_nodes();
@@ -184,8 +184,8 @@
 
       setInterval(call_nodes, 40 * 1000);
 
-      if (window.location.protocol === 'https:') {
-        window.location = 'http://' + window.location.hostname + window.location.pathname + window.location.hash;
+      if (window.location.protocol === 'http:') {
+        window.location = 'https://' + window.location.hostname + window.location.pathname + window.location.hash;
       }
     });
   </script>
